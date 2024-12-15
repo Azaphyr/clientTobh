@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
-import styles from "../styles/Home.module.scss";
+import styles from "../../../styles/Home.module.scss";
 import { Grid } from "@mui/material";
 
 const TestSlider: React.FC = () => {

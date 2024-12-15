@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { Grid } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react'
-import styles from '../styles/Home.module.scss'
+import styles from "../../../styles/Home.module.scss";
 import { Pagination, Navigation } from 'swiper/modules'
 import 'swiper/css/pagination'
 import 'swiper/swiper-bundle.css'

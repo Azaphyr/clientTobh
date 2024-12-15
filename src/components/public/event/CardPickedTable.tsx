@@ -8,7 +8,7 @@ import {
   Grid
 } from '@mui/material'
 import PersonIcon from '@mui/icons-material/Person';
-import styles from '../styles/Home.module.scss'
+import styles from "../../../styles/MyTable.module.scss";
 
 interface CardPickedTableProps {
   cards: {
@@ -28,7 +28,7 @@ export const CardPickedTable: React.FC<CardPickedTableProps> = ({ cards }) => {
             className={styles.card}
             sx={{
               borderRadius: '2rem',
-              height: '15rem',
+              height: '16rem',
               width: '35rem',
               maxWidth: '35rem', // Increased max width
               display: 'flex',
@@ -42,7 +42,7 @@ export const CardPickedTable: React.FC<CardPickedTableProps> = ({ cards }) => {
               alt={card.heading}
               sx={{
                 width: { xs: '100%', sm: '12rem' }, // Adjusted width for larger screens
-                height: { xs: '10rem', sm: '12rem' }, // Adjusted height
+                height: { xs: '10rem', sm: '12rem', md: '14rem'}, // Adjusted height
                 borderRadius: { xs: '3rem', sm: '3rem' },
                 objectFit: 'cover',
                 padding: { xs: '1rem', sm: '1rem' },

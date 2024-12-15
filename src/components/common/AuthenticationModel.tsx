@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button, Grid, Modal, Paper, TextField } from "@mui/material";
-import styles from "../styles/Home.module.scss";
+import styles from "../../styles/Home.module.scss";
 import axios from "axios";
 import { GoogleLogin } from "@react-oauth/google";
 import Cookies from "js-cookie";
@@ -91,9 +91,8 @@ const AuthenticationModel: React.FC<Props> = ({ onLogin }) => {
       });
       onLogin(user); // Notify parent component about successful login
       handleClose();
-      window.location.href = '/';
+      window.location.href = "/";
       return response.data;
-
     } catch (error) {
       if (axios.isAxiosError(error)) {
         // Handle Axios-specific errors
@@ -160,17 +159,19 @@ const AuthenticationModel: React.FC<Props> = ({ onLogin }) => {
                     Register
                   </Button>
                   <div className={styles.divider}>Or</div>
-                  <GoogleLogin
-                    onSuccess={(credentialResponse) => {
-                      console.log(credentialResponse?.credential);
-                      const cred = credentialResponse?.credential;
-                      googleSignIn(cred);
-                    }}
-                    onError={() => {
-                      console.log("Login Failed");
-                    }}
-                  />
-                  ;
+                  <div className={styles.google}>
+                    <GoogleLogin
+                      size = "medium"
+                      onSuccess={(credentialResponse) => {
+                        console.log(credentialResponse?.credential);
+                        const cred = credentialResponse?.credential;
+                        googleSignIn(cred);
+                      }}
+                      onError={() => {
+                        console.log("Login Failed");
+                      }}
+                    />
+                  </div>
                 </div>
               )}
               {!isSignUp && (
@@ -211,16 +212,18 @@ const AuthenticationModel: React.FC<Props> = ({ onLogin }) => {
                     </Button>
                   </form>
                   <div className={styles.divider}>Or</div>
-                  <GoogleLogin
-                    onSuccess={(credentialResponse) => {
-                      console.log(credentialResponse?.credential);
-                      const cred = credentialResponse?.credential;
-                      googleSignIn(cred);
-                    }}
-                    onError={() => {
-                      console.log("Login Failed");
-                    }}
-                  />
+                  <div className={styles.google}>
+                    <GoogleLogin size = "medium"
+                      onSuccess={(credentialResponse) => {
+                        console.log(credentialResponse?.credential);
+                        const cred = credentialResponse?.credential;
+                        googleSignIn(cred);
+                      }}
+                      onError={() => {
+                        console.log("Login Failed");
+                      }}
+                    />
+                  </div>
                 </div>
               )}
 

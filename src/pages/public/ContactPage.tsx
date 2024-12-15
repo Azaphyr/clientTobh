@@ -1,8 +1,9 @@
 import { HeadProvider, Link, Meta, Title } from "react-head";
-import { NavBar } from "../../components/NavBar";
+import { NavBar } from "../../components/common/NavBar";
 import styles from "../../styles/Home.module.scss";
 
 export default function ContactPage() {
+  const navPosition = "fixed";
   return (
     <div className={styles.container}>
       <HeadProvider>
@@ -12,7 +13,7 @@ export default function ContactPage() {
           <Link rel="icon" href="/favicon.ico" />
         </div>
       </HeadProvider>
-      <NavBar />
+      <NavBar NavPosition={navPosition}/>
       <main className={styles.main}>
         <h1>HELLO to contact</h1>
       </main>

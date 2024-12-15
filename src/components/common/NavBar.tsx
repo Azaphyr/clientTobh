@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Grid from "@mui/material/Grid"; // Changed import
 import Toolbar from "@mui/material/Toolbar";
@@ -20,8 +20,10 @@ const pages = ["Home", "About", "Contact"];
 const settings = ["Profile", "My Characters", "My table", "Logout"];
 const settingsDM = ["Profile", "Dashboard","Logout"];
 
-
-export const NavBar = () => {
+interface MyComponentProps {
+  NavPosition: string;
+}
+export const NavBar = ( {NavPosition}) => {
   const [anchorElNav, setAnchorElNav] = useState<HTMLElement>();
   const [anchorElUser, setAnchorElUser] = useState<HTMLElement>();
   const [userCookie, setUserCookie] = useState<any | null>(null); // Initialize userCookie state to null
@@ -81,7 +83,7 @@ export const NavBar = () => {
 
   return (
     <AppBar
-      position="static"
+      position= {NavPosition}
       color="transparent"
       sx={{
         borderColor: "#D63E38",

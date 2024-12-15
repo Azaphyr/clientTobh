@@ -1,17 +1,18 @@
 import Grid from "@mui/material/Grid";
 import { HeadProvider, Link, Meta, Title } from "react-head";
-import CenteredSlider from "../../components/CenteredSlider";
-import { DottedDivider } from "../../components/DottedDivider";
-import { HomeIntro } from "../../components/HomeIntro";
-import { NavBar } from "../../components/NavBar";
-import PlayLeft from "../../components/PlayLeft";
-import PlayRight from "../../components/PlayRight";
-import TestSlider from "../../components/TestSlider";
+import CenteredSlider from "../../components/public/home/CenteredSlider";
+import { DottedDivider } from "../../components/common/DottedDivider";
+import { HomeIntro } from "../../components/public/home/HomeIntro";
+import { NavBar } from "../../components/common/NavBar";
+import PlayLeft from "../../components/public/home/PlayLeft";
+import PlayRight from "../../components/public/home/PlayRight";
+import TestSlider from "../../components/public/home/TestSlider";
 import styles from "../../styles/Home.module.scss";
 
 export default function HomePage() {
+  const navPosition = 'top';
   return (
-    <div className={styles.container}>
+    <div className={styles.Home}>
       <HeadProvider>
         <div className="Home">
           <Title>DnD BrussHell</Title>
@@ -19,7 +20,7 @@ export default function HomePage() {
           <Link rel="icon" href="/favicon.ico" />
         </div>
       </HeadProvider>
-      <NavBar />
+      <NavBar NavPosition={navPosition}/>
       <main className={styles.main}>
         <div>
           <HomeIntro />

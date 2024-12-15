@@ -1,7 +1,7 @@
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import styles from "../styles/Home.module.scss";
+import styles from "../../../styles/Home.module.scss";
 
 
 export const HomeIntro = () => {
